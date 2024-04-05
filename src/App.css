@@ -1,0 +1,187 @@
+/* General Styling */
+@font-face {
+  font-family: 'Poppins'; 
+  src: url('../fonts/Poppins-Regular.ttf') format('truetype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+body {
+  font-family: 'Poppins';
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#app-container {
+  width: 100%; 
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styling */
+h2 {
+  text-align: center;
+  font-size: 55px;
+  font-weight: 800;
+  letter-spacing: 10px;
+  margin-top: 0%;
+  margin-bottom: 0%;
+  color: #f8d0d3;  /* Initial soft pink */
+  animation: pastel-text-shift 10s ease-in-out infinite;
+  padding: 20px;
+  background: linear-gradient(45deg, 
+              hsl(200, 100%, 40%),  /* Sample: Vibrant blue */
+              hsl(320, 80%, 60%),   /* Sample: Bold pink */
+              hsl(70, 90%, 50%));  /* Sample: Vibrant yellow */
+  background-size: 300%; /* Adjust to control animation speed */
+  animation: gradientAnimation 10s ease infinite;
+}
+
+@keyframes pastel-text-shift {
+  0% { color: #f8d0d3; } /* Soft Pink */
+  33% { color:  #e0f7d1; } /* Pale Green */
+  66% { color: #d4edff; } /* Light Blue */
+  100% { color: #ffe6c9; } /* Soft Peach */
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: left; }
+  50% { background-position: right; }
+  100% { background-position: left; }
+}
+
+/* Recommendations Section Styling */
+.recommendations-section {
+  flex-grow: 0.6; /* Adjust if you want this larger/smaller */
+  background-image: linear-gradient(to right, #fffbd5, #b20a2c);
+
+  padding: 20px;
+  overflow-y: auto; /* Enable vertical scrolling */
+  min-height: 325px;
+  max-height: 325px; /* Set a maximum height */
+}
+
+.recommendations-section p {
+  font-style: italic; 
+  margin-bottom: 15px; /* Add spacing below the message */
+}
+
+/* Within your CSS file */
+.recommendations-section ul li span {
+  display: inline; /* Make the spans display inline */
+  margin-right: 5px; /* Add a little space between elements */
+}
+
+
+.input-section {
+  background-image: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);
+
+  padding: 30px;
+  width: 100%;
+  position: fixed; /* Fix the input section to the viewport */
+  bottom: 0;
+  height: 25%; /* Set the height to 30% of the viewport */
+}
+
+
+form {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+:root {
+  --arrow-bg: rgba(100, 71, 71, 0.3);
+  --arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
+  --option-bg: rgba(255, 255, 255, 0.2);
+  --select-bg: rgba(255, 255, 255, 0.2);
+}
+
+select {
+  /* Reset */
+  appearance: none;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  /* Personalize */
+  width: 10rem;
+  padding: 1rem 4rem 1rem 1rem;
+  background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
+    linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
+  color: rgb(62, 3, 73);
+  border-radius: 0.25em;
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  /* Remove IE arrow */
+  &::-ms-expand {
+    display: none;
+  }
+  /* Remove focus outline */
+  &:focus {
+    outline: none;
+  }
+  /* <option> colors */
+  option {
+    color: inherit;
+    background-color: var(--option-bg);
+  }
+}
+
+
+.description-row {
+  width: 100%; 
+  margin-bottom: 10px;
+}
+
+
+textarea {
+  width: 90%;
+  resize: vertical, horizontal;
+  min-height: 50px;
+  margin-bottom: 30px;
+  background-color: rgba(255, 255, 255, 0.2); /* Light grey background */
+  border: 4px solid #ccc; /* Default border */
+  border-radius: 10px; /* Add rounded corners for better effect */
+  border-color: rgba(100, 71, 71, 0.3);
+  padding: 10px;
+  transition: border-color 0.2s ease-in-out; /* Smooth border transition */
+  
+
+}
+
+
+textarea:focus {
+  border-color: #007bff; /* Blue border on focus */
+}
+
+/* Optional: Additional focus colors */
+textarea:focus:active {
+  border-color: #00b894; /* Green border on focus and active */
+}
+
+
+/* Button Styling */
+#search-button {
+/* To position it within the textarea */
+  position: absolute; 
+  bottom: 20px;
+  left: 50%;         /* Align the center of the button */
+  transform: translate(-50%, 0); /* Shift the button half its width to the left */
+  background-color: #8a2be2;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#search-button:hover {
+ background-color: #6a1b9a; /* Darker purple on hover */
+}
