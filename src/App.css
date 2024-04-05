@@ -62,7 +62,7 @@ h2 {
   padding: 20px;
   overflow-y: auto; /* Enable vertical scrolling */
   min-height: 325px;
-  max-height: 325px; /* Set a maximum height */
+  max-height: calc(100vh - 30%); /* Assuming 80px header height */
 }
 
 .recommendations-section p {
