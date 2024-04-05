@@ -61,7 +61,7 @@ h2 {
 
   padding: 20px;
   overflow-y: auto; /* Enable vertical scrolling */
-  min-height: 325px;
+  min-height: calc(100vh - 30%);
   max-height: calc(100vh - 30%); /* Assuming 80px header height */
 }
 
