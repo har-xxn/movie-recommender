@@ -101,7 +101,7 @@ function App() {
 
 
     try {
-      const prompt = `Create a list of movies based on this description or based on the mood this description implies: ${description}. Consider the language ${language}, movies from the decade ${decade}, and the ${genre}. (Important: It's a must that you should start each of the movie names with the word "Mov:" and each of the description with the word "Desc:" while keeping both of these as one single string in ONE SINGLE LINE(DEALBREAKER) DO NOT SPLIT THEM UP AS TWO LINES, add the release year after the movie name with a parantheses. also don't make the text bold)`;
+      const prompt = `Create a list of movies based on this description or based on the mood this description implies: ${description}. Consider the language ${language}, movies from the decade ${decade}, and the genre ${genre}. (Important: It's a must that you should start each of the movie names with the word "Mov:" and each of the description with the word "Desc:" while keeping both of these as one single string in ONE SINGLE LINE(DEALBREAKER) DO NOT SPLIT THEM UP AS TWO LINES, add the release year after the movie name with a parantheses. also don't make the text bold)`;
 
       const result = await model.generateContent(prompt);
       
@@ -132,21 +132,21 @@ function App() {
             id="language"
             value={language}
             setValue={setLanguage}
-            options={['English', 'Hindi', 'French', 'Spanish', 'Japanese', 'Telugu', 'Malayalam', 'Tamil', 'Korean']}
+            options={['Any', 'English', 'Hindi', 'French', 'Spanish', 'Japanese', 'Telugu', 'Malayalam', 'Tamil', 'Korean']}
           />
           <SelectInput
             label="Release Decade:"
             id="decade"
             value={decade}
             setValue={setDecade}
-            options={['1960s', '1970s', '1980s', '1990s', '2000s', '2010s', '2020s']}
+            options={['Any', '1960s', '1970s', '1980s', '1990s', '2000s', '2010s', '2020s']}
           />
           <SelectInput
             label="Preferred Genre:"
             id="genre"
             value={genre}
             setValue={setGenre}
-            options={['Action', 'Animation', 'Comedy', 'Crime', 'Documentary', 'Drama', 'Fantasy', 'History', 'Horror', 'Music', 'Mystery', 'Romance', 'Sci-Fi', 'Thriller', 'War', 'Western']}
+            options={['Any', 'Action', 'Animation', 'Comedy', 'Crime', 'Documentary', 'Drama', 'Fantasy', 'History', 'Horror', 'Music', 'Mystery', 'Romance', 'Sci-Fi', 'Thriller', 'War', 'Western']}
           />
           <div className="description-row">
             <label htmlFor="description">A brief prompt for the kinda movie you wanna watch or describing your current mood:</label>
